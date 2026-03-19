@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Portfolio Fabricio Amores Monge</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<!-- Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-fixed-dim": "#7ad3e9",
+              "tertiary-fixed": "#dee1ff",
+              "outline": "#889296",
+              "on-secondary-fixed": "#351000",
+              "secondary-fixed-dim": "#ffb693",
+              "inverse-primary": "#006879",
+              "error": "#ffb4ab",
+              "secondary": "#ffb693",
+              "on-tertiary-fixed": "#131939",
+              "surface-variant": "#2d3354",
+              "on-error": "#690005",
+              "tertiary-fixed-dim": "#bfc4ed",
+              "on-surface-variant": "#bec8cc",
+              "on-error-container": "#ffdad6",
+              "on-surface": "#dee1ff",
+              "surface-container": "#171d3d",
+              "surface-container-low": "#131939",
+              "on-secondary-container": "#f0a37e",
+              "secondary-fixed": "#ffdbcc",
+              "on-tertiary": "#282e4f",
+              "surface-bright": "#313759",
+              "on-background": "#dee1ff",
+              "error-container": "#93000a",
+              "on-primary-container": "#003f4a",
+              "surface-container-highest": "#2d3354",
+              "surface-container-high": "#222848",
+              "outline-variant": "#3e484b",
+              "inverse-surface": "#dee1ff",
+              "surface": "#0a1031",
+              "surface-dim": "#0a1031",
+              "surface-tint": "#7ad3e9",
+              "on-primary-fixed": "#001f26",
+              "primary-container": "#53aec3",
+              "inverse-on-surface": "#282e4f",
+              "on-tertiary-container": "#303658",
+              "surface-container-lowest": "#050b2b",
+              "tertiary": "#bfc4ed",
+              "background": "#0a1031",
+              "primary-fixed": "#a9edff",
+              "on-secondary": "#532207",
+              "on-secondary-fixed-variant": "#6f381b",
+              "on-primary-fixed-variant": "#004e5c",
+              "tertiary-container": "#9aa0c7",
+              "secondary-container": "#6f381b",
+              "on-tertiary-fixed-variant": "#3f4567",
+              "primary": "#7ad3e9",
+              "on-primary": "#003640"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        body {
+          background-color: #0a1031;
+          color: #dee1ff;
+          font-family: 'Inter', sans-serif;
+          scroll-behavior: smooth;
+        }
+        html {
+          scroll-behavior: smooth;
+        }
+        .glass-nav {
+            background: rgba(10, 16, 49, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #7ad3e9, #53aec3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a1031;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #222848;
+            border-radius: 10px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal-on-scroll {
+            view-timeline-name: --reveal;
+            view-timeline-axis: block;
+            animation-timeline: --reveal;
+            animation-name: fadeInUp;
+            animation-range: entry 10% cover 30%;
+            animation-fill-mode: both;
+        }
+    </style>
+    </head>
+    <script>
+    // Animación visual en botones de navegación y redirección
+    document.addEventListener('DOMContentLoaded', function() {
+      // Selecciona todos los enlaces de navegación y botones de redirección
+      const navLinks = document.querySelectorAll('nav a, a[href^="#"], button, .group.flex.items-center.gap-4');
+      navLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          // Si es un enlace interno, realiza scroll suave
+          if (link.getAttribute('href') && link.getAttribute('href').startsWith('#')) {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            const target = document.getElementById(targetId);
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+          // Animación visual (pulse)
+          link.classList.add('animate__animated', 'animate__pulse');
+          setTimeout(() => {
+            link.classList.remove('animate__animated', 'animate__pulse');
+          }, 600);
+        });
+      });
+    });
+    </script>
+</head>
+</head>
+<body class="antialiased">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0a1031]/60 backdrop-blur-xl shadow-[0_40px_40px_rgba(222,225,255,0.06)]">
+<nav class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-bold tracking-tighter text-white">Portfolio</div>
+<div class="hidden md:flex gap-8 items-center font-['Inter'] tracking-tighter font-medium text-sm">
+<a class="text-[#7ad3e9] border-b-2 border-[#7ad3e9] pb-1 animate__animated" href="#home">Home</a>
+<a class="text-slate-400 hover:text-white transition-colors animate__animated" href="#about">About</a>
+<a class="text-slate-400 hover:text-white transition-colors animate__animated" href="#projects">Projects</a>
+<a class="text-slate-400 hover:text-white transition-colors animate__animated" href="#skills">Skills</a>
+<a class="text-slate-400 hover:text-white transition-colors animate__animated" href="#experience">Experience</a>
+<a class="text-slate-400 hover:text-white transition-colors animate__animated" href="#contact">Contact</a>
+</div>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col justify-center px-8 max-w-7xl mx-auto pt-20" id="home">
+  <div data-aos="fade-up"></div>
+  <!-- Animación de entrada para el Hero -->
+  <div class="animate__animated animate__fadeInDown">
+<div class="space-y-6 max-w-4xl">
+<span class="text-secondary font-medium tracking-widest uppercase text-sm">Informatico Empresarial &amp; Developer</span>
+<h1 class="text-7xl md:text-9xl font-bold tracking-tighter leading-none animate__animated animate__fadeInLeft animate__delay-1s">
+                    Fabricio <br/> <span class="text-gradient">Amores Monge.</span>
+</h1>
+<p class="text-lg md:text-2xl text-on-surface-variant max-w-2xl font-light leading-relaxed animate__animated animate__fadeInUp animate__delay-2s">
+          Studying Cybersegurity to build a career in the field 
+        </p>
+<div class="flex gap-6 pt-8 animate__animated animate__fadeInUp animate__delay-3s">
+<a href="#projects" class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-4 rounded-xl font-bold tracking-tight hover:opacity-90 transition-all flex items-center gap-2 animate__animated">
+  View Projects
+  <span class="material-symbols-outlined">arrow_outward</span>
+</a>
+<a href="#contact" class="border border-outline-variant/15 text-primary px-8 py-4 rounded-xl font-bold tracking-tight hover:bg-white/5 transition-all animate__animated">
+  Contact Me
+</a>
+  </div> <!-- Fin animación Hero -->
+</div>
+<!-- Abstract Background Element -->
+<div class="absolute top-1/4 right-0 -z-10 w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-1/4 left-0 -z-10 w-[300px] h-[300px] bg-secondary/10 blur-[100px] rounded-full"></div>
+</section>
+<!-- About Me Section -->
+<section class="py-32 bg-surface-container-low animate__animated animate__fadeIn animate__delay-1s" id="about">
+    <div data-aos="fade-right"></div>
+<div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-20 items-center">
+<div class="relative group">
+<div class="absolute -inset-4 bg-primary/20 blur-2xl group-hover:bg-primary/30 transition-all rounded-full"></div>
+<img alt="Developer Portrait" class="relative rounded-2xl w-full aspect-square object-cover grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl" src="imagenes/foto mia.png"/>
+</div>
+<div class="space-y-8">
+<h2 class="text-5xl font-bold tracking-tighter">About <br/><span class="text-secondary">me</span></h2>
+<p class="text-lg text-on-surface-variant leading-relaxed">
+                        I am a Informatica Empresarial student in my final year in the university of Costa Rica, with a strong passion for cybersecurity. My goal is to build a solid career in this field. <br>
+                        I have a focus on software development, particularly in design and architecture. 
+                        I also have experience in databases, gained through projects completed at university. 
+                        I have worked with technologies such as React, Node.js, Python, and Tailwind CSS, and I am always looking to learn new tools and techniques to improve my skills. 
+                        I am excited about the opportunities that the future holds for me in the world of technology and cybersecurity.
+                        <a href="cv/resume.pdf" target="_blank" rel="noopener" class="mt-8 flex items-center gap-2 text-secondary hover:text-white transition-colors animate__animated cursor-pointer">
+                        <span class="material-symbols-outlined">download</span>
+                        <span class="text-sm font-bold uppercase tracking-widest">Download CV</span>
+                        </a>
+                    </p>
+
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Text-Only Section -->
+<section class="py-32 px-8 max-w-7xl mx-auto animate__animated animate__fadeIn animate__delay-2s" id="projects">
+    <div data-aos="zoom-in"></div>
+<div class="flex justify-between items-end mb-20">
+<h2 class="text-5xl font-bold tracking-tighter">Mis <br/>Proyectos.</h2>
+<div class="text-right">
+<span class="text-secondary text-sm font-medium tracking-widest uppercase">2023 — 2026</span>
+</div>
+</div>
+<div class="space-y-16">
+<!-- Project 1 -->
+<div class="group border-b border-outline-variant/10 pb-12 hover:border-primary/50 transition-colors">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-4 flex-1">
+<h3 class="text-5xl md:text-7xl font-bold tracking-tighter group-hover:text-primary transition-colors">SINEM Managment System</h3>
+<div class="flex justify-between items-center mt-2 text-sm text-slate-500">
+  <span>Backend Developer, Database Administrator</span>
+  <span>Sep 2025 - Nov 2025</span>
+</div>
+<p class="text-xl text-on-surface-variant max-w-2xl font-light">• Designed and implemented a full CRUD module for role management, handling creation, update, deletion, and permission 
+                                                                            control at the backend level. <br>
+                                                                            • Developed a professor assignment module that enabled instructors to select courses and schedules, incorporating automated 
+                                                                            schedule allocation logic. <br>
+                                                                            • Implemented a complete CRUD system for schedule management, ensuring data integrity and consistency across course 
+                                                                            assignments. <br>
+                                                                            • Built a reporting system for professors, generating structured reports displaying assigned courses and schedules.
+<div class="flex flex-wrap gap-4 pt-2">
+<span class="text-xs uppercase tracking-widest text-slate-500 bg-surface-container px-3 py-1 rounded">Typescript</span>
+<span class="text-xs uppercase tracking-widest text-slate-500 bg-surface-container px-3 py-1 rounded">Prisma ORM</span>
+<span class="text-xs uppercase tracking-widest text-slate-500 bg-surface-container px-3 py-1 rounded">MySQL</span>
+<span class="text-xs uppercase tracking-widest text-slate-500 bg-surface-container px-3 py-1 rounded">Javascript</span>
+<span class="text-xs uppercase tracking-widest text-slate-500 bg-surface-container px-3 py-1 rounded">Next.js</span>
+</div>
+</div>
+<div class="flex items-center gap-4 text-primary group-hover:translate-x-2 transition-transform">
+<span class="text-sm font-bold uppercase tracking-widest">View Project</span>
+<span class="material-symbols-outlined text-3xl">arrow_outward</span>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group border-b border-outline-variant/10 pb-12 hover:border-primary/50 transition-colors">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="space-y-4 flex-1">
+<h3 class="text-5xl md:text-7xl font-bold tracking-tighter group-hover:text-primary transition-colors">Enterprise Database Management System</h3>
+<div class="flex justify-between items-center mt-2 text-sm text-slate-500">
+  <span>Database Administrator, Backend Developer</span>
+  <span>Mar 2025 - Jun 2025</span>
+</div>
+<p class="text-xl text-on-surface-variant max-w-2xl font-light">• Centralized Security Management: Implements role-based access control (RBAC) with BCrypt-encrypted authentication, man
+                                                                    aging users, roles, and granular permissions across multiple business systems through a dedicated security module. <br>
+                                                                    • Integrated Business Application: Full-featured cosmetics inventory and sales management system with product catalog, 
+                                                                    customer relationship management, purchase orders, and real-time stock tracking controlled by the security layer. <br>
+                                                                    • Three-Tier Enterprise Architecture: Follows industry-standard separation of concerns with Presentation (Windows Forms), 
+                                                                    Business Logic, and Data Access layers communicating with Oracle Database 21c through stored procedures. <br>
+                                                                    • Dynamic Permission Enforcement: Real-time UI customization based on user permissions, controlling form access, button 
+                                                                    visibility, and CRUD operations at the window level with role inheritance and user-specific overrides. <br>
+                                                                    • Comprehensive Audit Trail: Complete logging system tracking all security events (user/role/permission changes) and access 
+                                                                    patterns (login attempts, session data) for compliance and security monitoring.</p>
+<div class="flex flex-wrap gap-4 pt-2">
+<span class="text-xs uppercase tracking-widest text-slate-500 bg-surface-container px-3 py-1 rounded">C#</span>
+<span class="text-xs uppercase tracking-widest text-slate-500 bg-surface-container px-3 py-1 rounded">HTML</span>
+<span class="text-xs uppercase tracking-widest text-slate-500 bg-surface-container px-3 py-1 rounded">TSQL</span>
+</div>
+</div>
+<div class="flex items-center gap-4 text-primary group-hover:translate-x-2 transition-transform">
+<span class="text-sm font-bold uppercase tracking-widest">View Project</span>
+<span class="material-symbols-outlined text-3xl">arrow_outward</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-20 flex justify-center">
+<a href="https://github.com/Mrtropper" target="_blank" rel="noopener" class="group flex items-center gap-4 text-sm font-bold tracking-widest uppercase text-slate-400 hover:text-primary transition-colors animate__animated cursor-pointer">
+                    Explore All Projects 
+                    <div class="w-12 h-[1px] bg-slate-400 group-hover:bg-primary transition-all"></div>
+</a>
+</div>
+</section>
+<!-- Redesigned Skills Section (Minimalist List) -->
+<section class="py-32 bg-surface-container-low animate__animated animate__fadeIn animate__delay-3s" id="skills">
+    <div data-aos="fade-up" data-aos-delay="200"></div>
+<div class="max-w-7xl mx-auto px-8 reveal-on-scroll">
+<div class="mb-20 text-center md:text-left">
+<h2 class="text-5xl font-bold tracking-tighter mb-4">Skills</h2>
+<p class="text-slate-500 max-w-md">Technical and soft skills that enable me to tackle complex challenges and deliver effective solutions.</p>
+</div>
+<div class="grid md:grid-cols-2 gap-20">
+<!-- Technical Skills -->
+<div class="space-y-12">
+<div>
+<h3 class="text-xs font-bold uppercase tracking-[0.4em] text-primary mb-8 border-b border-primary/20 pb-4 inline-block">Technical Skills</h3>
+<ul class="space-y-6">
+<li class="flex items-center justify-between group cursor-default">
+<span class="text-xl font-medium text-slate-300 group-hover:text-white group-hover:translate-x-2 transition-all duration-300">C# &amp; .NET</span>
+<span class="h-[1px] flex-1 mx-6 bg-slate-800 group-hover:bg-primary/30 transition-colors"></span>
+<span class="text-xs text-slate-500 uppercase tracking-widest">Junior</span>
+</li>
+<li class="flex items-center justify-between group cursor-default">
+<span class="text-xl font-medium text-slate-300 group-hover:text-white group-hover:translate-x-2 transition-all duration-300">HTML & CSS</span>
+<span class="h-[1px] flex-1 mx-6 bg-slate-800 group-hover:bg-primary/30 transition-colors"></span>
+<span class="text-xs text-slate-500 uppercase tracking-widest">Intermediate</span>
+</li>
+<li class="flex items-center justify-between group cursor-default">
+<span class="text-xl font-medium text-slate-300 group-hover:text-white group-hover:translate-x-2 transition-all duration-300">React &amp; Next.js</span>
+<span class="h-[1px] flex-1 mx-6 bg-slate-800 group-hover:bg-primary/30 transition-colors"></span>
+<span class="text-xs text-slate-500 uppercase tracking-widest">Junior</span>
+</li>
+<li class="flex items-center justify-between group cursor-default">
+<span class="text-xl font-medium text-slate-300 group-hover:text-white group-hover:translate-x-2 transition-all duration-300">JavaScript &amp; TypeScript</span>
+<span class="h-[1px] flex-1 mx-6 bg-slate-800 group-hover:bg-primary/30 transition-colors"></span>
+<span class="text-xs text-slate-500 uppercase tracking-widest">Intermediate</span>
+</li>
+<li class="flex items-center justify-between group cursor-default">
+<span class="text-xl font-medium text-slate-300 group-hover:text-white group-hover:translate-x-2 transition-all duration-300">SQL</span>
+<span class="h-[1px] flex-1 mx-6 bg-slate-800 group-hover:bg-primary/30 transition-colors"></span>
+<span class="text-xs text-slate-500 uppercase tracking-widest">Intermediate</span>
+</li>
+<li class="flex items-center justify-between group cursor-default">
+<span class="text-xl font-medium text-slate-300 group-hover:text-white group-hover:translate-x-2 transition-all duration-300">Java</span>
+<span class="h-[1px] flex-1 mx-6 bg-slate-800 group-hover:bg-primary/30 transition-colors"></span>
+<span class="text-xs text-slate-500 uppercase tracking-widest">Intermediate</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Human/Soft Skills -->
+<div class="space-y-12">
+<div>
+<h3 class="text-xs font-bold uppercase tracking-[0.4em] text-secondary mb-8 border-b border-secondary/20 pb-4 inline-block">Human Skills</h3>
+<p class="text-lg text-slate-400 leading-relaxed max-w-xl">
+    I value teamwork, clear communication, and empathy, as these are essential in any work environment.
+    I am a calm person, able to socialize and be a supportive team member. When needed,
+    I can also take on leadership responsibilities.
+    I am always willing to learn new things and continuously improve both personally and professionally,
+    maintaining a collaborative mindset and a strong focus on growth.
+</p>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Section -->
+<section class="py-32 px-8 max-w-7xl mx-auto animate__animated animate__fadeIn animate__delay-4s" id="experience">
+<div class="grid md:grid-cols-3 gap-12">
+<div class="col-span-1">
+<h2 class="text-5xl font-bold tracking-tighter">Career <br/>Trajectory.</h2>
+
+</div>
+<div class="md:col-span-2 space-y-12">
+<!-- Exp Item -->
+<div class="relative pl-8 border-l-2 border-outline-variant/10 pb-12 reveal-on-scroll">
+<div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-primary ring-4 ring-surface"></div>
+<div class="flex justify-between items-center mb-2">
+<h4 class="text-2xl font-bold">Retail Associate</h4>
+<span class="text-secondary text-sm font-medium">2025 — 2026</span>
+</div>
+<p class="text-slate-400 font-medium mb-4">Almacenes El Rey</p>
+<p class="text-slate-500 text-sm leading-relaxed">Retail team member responsible for merchandise organization, customer service, section management, and cash handling 
+operations, ensuring an efficient store environment and a positive customer experience. <br>
+• Organized and restocked merchandise across multiple store aisles, ensuring product availability and proper visual presenta
+tion. <br>
+• Assisted customers by providing product information, resolving inquiries, and supporting purchasing decisions. <br>
+• Operated cash registers, processed transactions accurately, and provided efficient customer service at checkout. <br>
+• Managed complete store sections, overseeing inventory organization, product placement, and cleanliness standards. <br>
+• Performed daily cash counting and cash register reconciliation, ensuring accuracy and accountability in financial handling
+</p>
+</div>
+
+</section>
+<!-- Contact Section -->
+<section class="py-32 bg-surface-container-lowest animate__animated animate__fadeIn animate__delay-5s" id="contact">
+<div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-20 items-center">
+<div class="space-y-8 reveal-on-scroll">
+<h2 class="text-6xl font-bold tracking-tighter">Let's build <br/>something <span class="text-primary">legendary.</span></h2>
+<p class="text-slate-400 text-lg">Currently accepting new projects and consulting opportunities for late 2025.</p>
+<div class="space-y-4 pt-8">
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 bg-surface-container-high rounded-full flex items-center justify-center group-hover:bg-primary transition-colors">
+<span class="material-symbols-outlined text-white">mail</span>
+</div>
+<div>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest">Email Me</p>
+<p class="text-lg font-bold">fabri.amores89@gmail.com</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col justify-center reveal-on-scroll">
+<a class="group relative flex items-center justify-between p-12 bg-surface-container-high border border-outline-variant/10 rounded-xl hover:border-primary/50 transition-all duration-500 overflow-hidden" href="mailto:hello@obsidian-gallery.io">
+<div class="relative z-10">
+<p class="text-xs uppercase tracking-[0.3em] text-slate-500 mb-2 font-medium">Direct Inquiry</p>
+<h3 class="text-4xl md:text-5xl font-bold tracking-tighter">Send Email</h3>
+</div>
+<div class="relative z-10 w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary transition-all duration-500">
+<span class="material-symbols-outlined text-4xl text-primary group-hover:text-on-primary transition-colors">mail</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/0 to-primary/5 translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 bg-[#0a1031] border-t border-[#3e484b]/15">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto gap-4">
+<div class="flex gap-8">
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-slate-500 hover:text-[#7ad3e9] transition-colors opacity-80 hover:opacity-100 transition-opacity" href="https://github.com/Mrtropper">GitHub</a>
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-slate-500 hover:text-[#7ad3e9] transition-colors opacity-80 hover:opacity-100 transition-opacity" href="https://www.linkedin.com/in/fabricio-amores-monge-a46115273/">LinkedIn</a>
+</div>
+</div>
+ </footer>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+
+  // Configuración de tsParticles para fondo animado
+  window.addEventListener('DOMContentLoaded', () => {
+    tsParticles.load("tsparticles", {
+      background: {
+        color: { value: "#0a1031" }
+      },
+      fpsLimit: 60,
+      particles: {
+        number: { value: 60, density: { enable: true, area: 800 } },
+        color: { value: ["#7ad3e9", "#ffb693", "#bfc4ed"] },
+        shape: { type: "circle" },
+        opacity: { value: 0.5, random: true },
+        size: { value: 3, random: { enable: true, minimumValue: 1 } },
+        move: {
+          enable: true,
+          speed: 1.2,
+          direction: "none",
+          random: false,
+          straight: false,
+          outModes: { default: "out" }
+        },
+        links: {
+          enable: true,
+          distance: 120,
+          color: "#7ad3e9",
+          opacity: 0.2,
+          width: 1
+        }
+      },
+      detectRetina: true
+    });
+  });
+</script>
+</body></html>
